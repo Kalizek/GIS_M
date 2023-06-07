@@ -22,9 +22,9 @@ from django.urls import path
 from major.views import *
 
 urlpatterns = [
-    path('', index_m),
+    path('', index),
     path('admin/', admin.site.urls),
-    path('major/', index),
+    path('about', about, name="about")
 ]
 
 if settings.DEBUG:
