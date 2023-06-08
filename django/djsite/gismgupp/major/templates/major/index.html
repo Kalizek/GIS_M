@@ -6,8 +6,16 @@
 <ul>
 	{% for p in posts %}
 	<li>
-		<h2>{{p.title}}</h2>
-		<p>{{p.address}}</p>
+		<div class="card" style="width: 45rem;">
+		  {% if p.photo %}
+	<p><img class="img-article-left thumb" src="{{p.photo.url}}"></p>
+			{% endif %}
+		  <div class="card-body">
+			<h2>{{p.title}}</h2>
+			<p>{{p.address}}</p>
+			  <a href="{{p.get_absolute_url}}" class="btn btn-primary">Открыть карту</a>
+		  </div>
+		</div>
 		<hr>
 	</li>
 	{% endfor %}

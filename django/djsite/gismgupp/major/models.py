@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 
@@ -11,3 +13,8 @@ class building(models.Model):
     is_published = models.BooleanField(default=True)
     def __str__(self):
         return self.title
+
+    def tit(self):
+        return reverse('map_id', kwargs={'map_id': self.title})
+    def get_absolute_url(self):
+        return reverse('map', kwargs={'map_id': self.pk})
